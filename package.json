@@ -7,6 +7,14 @@
     "name": "Brandon Erb",
     "email": "brandom.m.erb@gmail.com"
   },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && npm run build:full",
+    "build:common": "npm run clean && npm run build:swc",
+    "build:swc": "swc ./src -d ./dist/src",
+    "build:full": "tsc && tsc-alias"
+  },
+  "main": "dist/src/index.js",
   "dependencies": {
     "@atomicdesign/atomic-singularity": "1.0.0"
   },
