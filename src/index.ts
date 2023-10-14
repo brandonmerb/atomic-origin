@@ -8,4 +8,4 @@ export type * from './types';
 export * from './origin.governor'
 
 // Export our decorators
-export * from './decorators';
+export * from './decorators/index'
