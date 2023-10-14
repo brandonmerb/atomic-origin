@@ -9,16 +9,25 @@
   },
   "scripts": {
     "clean": "rimraf ./dist",
-    "build": "npm run clean && npm run build:full",
-    "build:common": "npm run clean && npm run build:swc",
-    "build:swc": "swc ./src -d ./dist/src",
-    "build:full": "tsc && tsc-alias"
+    "build": "npm run clean && npm run build:vite",
+    "build:vite": "vite build -c vite.config.ts"
   },
-  "main": "dist/src/index.js",
   "dependencies": {
-    "@atomicdesign/atomic-singularity": "1.0.0"
+    "@atomicdesign/atomic-singularity": "1.0.0",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "rollup-plugin-swc": "^0.2.1",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0",
+    "vite-tsconfig-paths": "^4.2.1"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": [
+      "./dist/index.js",
+      "./dist/index.d.ts"
+    ]
   }
 }
