@@ -19,7 +19,15 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
       rollupTypes: true,
     }),
     swc.vite({
-      configFile: './.swcrc'
+      configFile: './.swcrc',
+      exclude: [
+        "@atomicdesign/atomic-singularity",
+        "reflect-metadata",
+        "vue"
+      ],
+      jsc: {
+        
+      }
     })
   ]
 
@@ -35,8 +43,9 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
           entryFileNames: '[name].js'
         },
         external: [
-          "vue",
-          "@atomicdesign/atomic-singularity"
+          "@atomicdesign/atomic-singularity",
+          "reflect-metadata",
+          "vue"
         ]
       }
     },

@@ -15,8 +15,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@atomicdesign/atomic-singularity": "1.0.0",
-    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.62",
@@ -33,6 +31,10 @@
     "vite": "^4.4.11",
     "vite-plugin-dts": "^3.6.0",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "peerDependencies": {
+    "@atomicdesign/atomic-singularity": "1.0.0",
+    "reflect-metadata": "^0.1.13"
   },
   "main": "./dist/index.js",
   "exports": {
