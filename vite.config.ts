@@ -10,7 +10,6 @@ import dts from 'vite-plugin-dts';
 // SWC for vite to actually handle the rendering
 import swc from 'unplugin-swc'
 
-
 export default defineConfig((config: ConfigEnv): UserConfig => {
   let plugins = [
     tsconfigPaths(),
@@ -18,17 +17,7 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
     dts({
       rollupTypes: true,
     }),
-    swc.vite({
-      configFile: './.swcrc',
-      exclude: [
-        "@atomicdesign/atomic-singularity",
-        "reflect-metadata",
-        "vue"
-      ],
-      jsc: {
-        
-      }
-    })
+    swc.vite()
   ]
 
   return {
@@ -43,9 +32,8 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
           entryFileNames: '[name].js'
         },
         external: [
-          "@atomicdesign/atomic-singularity",
           "reflect-metadata",
-          "vue"
+          /^@atomicdesign*/
         ]
       }
     },
