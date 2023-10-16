@@ -21,7 +21,11 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    
+    "types": [
+      "node"
+    ]
   },
 
   "include": [
