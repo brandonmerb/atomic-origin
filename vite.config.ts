@@ -32,8 +32,10 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
           entryFileNames: '[name].js'
         },
         external: [
-          "reflect-metadata",
-          /^@atomicdesign*/
+          /^@atomicdesign*/,
+          /^node:*/,
+          /^fastify*/,
+          "reflect-metadata"
         ]
       }
     },

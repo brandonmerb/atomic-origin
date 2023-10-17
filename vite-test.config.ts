@@ -29,7 +29,9 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
         },
         external: [
           /^@atomicdesign*/,
-          /^node:*/
+          /^node:*/,
+          /^fastify*/,
+          "reflect-metadata"
         ]
       }
     },

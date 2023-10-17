@@ -4,7 +4,7 @@
   // Module compilation options
   "module": {
     // We want to do ES6 modules. Only building for latest tools currently
-    "type": "commonjs",
+    "type": "es6",
 
     "resolveFully": true
   },

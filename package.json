@@ -2,6 +2,7 @@
   "name": "@atomicdesign/atomic-origin",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "author": {
     "name": "Brandon Erb",
     "email": "brandom.m.erb@gmail.com"
@@ -9,7 +10,8 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && npm run build:vite",
-    "build:vite": "vite build -c vite.config.ts",
+    "build:vite_": "vite build -c vite.config.ts",
+    "build:vite": "vite build -c vite-test.config.ts",
     "build:test": "swc ./src -d ./dist",
     "serve:test": "node ./dist/main.js",
     "test": "jest"
@@ -37,6 +39,7 @@
   },
   "peerDependencies": {
     "@atomicdesign/atomic-singularity": "1.0.0",
+    "@atomicdesign/atomic-sdk": "1.0.0",
     "reflect-metadata": "^0.1.13"
   },
   "main": "./dist/index.js",

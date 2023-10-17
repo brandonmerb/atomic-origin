@@ -1,10 +1,10 @@
 import type { AtomicOriginModule } from "./types";
 import { AbstractBaseGovernor } from '@atomicdesign/atomic-singularity';
-import { ModuleLogService } from '@atomicdesign/atomic-singularity/logging';
+import { LoggerInterface, LoggingMiddleware } from '@atomicdesign/atomic-singularity';
 
 export class OriginGovernor extends AbstractBaseGovernor<AtomicOriginModule> {
   // Governor used for logging
-  private governorLogger: ModuleLogService = new ModuleLogService({name: "Origin Governor"})
+  private governorLogger: LoggerInterface = LoggingMiddleware.instance.getLogger("Origin Governor");
 
   useModule(module: AtomicOriginModule): this {
     this.governorLogger.system("Do nothing for now");
