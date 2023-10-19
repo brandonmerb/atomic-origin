@@ -36,11 +36,12 @@
     "@atomicdesign/atomic-singularity": "1.0.0",
     "reflect-metadata": "^0.1.13"
   },
-  "main": "./dist/index.js",
   "exports": {
-    ".": [
-      "./dist/index.js",
-      "./dist/index.d.ts"
-    ]
+    ".": {
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "atomicdesign:local": "./src/index.ts"
+    }
   }
 }
